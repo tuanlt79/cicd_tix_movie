@@ -14,7 +14,6 @@ jobs:
       - checkout
       - setup_remote_docker:
           version: 19.03.13
-
       - docker/check:
           docker-username: DOCKER_USER
           docker-password: DOCKER_PASSWORD
