@@ -29,12 +29,10 @@ jobs:
 workflows:
   my-pipeline:
     jobs:
-      - node/test:
-          version: "15.1"
+      - node/test
       - build-and-push:
           requires:
-            - node/test:
-                version: "15.1"
+            - node/test
           filters:
             branches:
               only:
