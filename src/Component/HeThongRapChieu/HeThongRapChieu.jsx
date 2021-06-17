@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
 import { layThongTinHeThongCumRapAction } from "../../Action/PhimAction";
-import ScrollToBottom from "react-scroll-to-bottom";
+// import ScrollToBottom from "react-scroll-to-bottom";
 import ThongTinRap from "./ThongTinRap";
 import { NavLink } from "react-router-dom";
 
