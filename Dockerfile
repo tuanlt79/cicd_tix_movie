@@ -3,8 +3,7 @@ WORKDIR /app
 RUN chown node:node /app
 USER node
 COPY --chown=node:node package*.json ./
-RUN npm install --global yarn
-RUN yarn add
+RUN npm i
 COPY --chown=node:node . .
 RUN npm run build
 CMD ["node"]
