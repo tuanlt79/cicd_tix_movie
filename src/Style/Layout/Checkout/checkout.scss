@@ -1,0 +1,186 @@
+.checkout {
+  p {
+    margin-bottom: 0px;
+  }
+  .step__checkout {
+    position: fixed;
+    background-color: $primary;
+    box-shadow: 0 0 15px rgb(0 0 0 / 30%);
+    z-index: 3;
+    top: -1px;
+    left: 0;
+    width: 90%;
+    height: 80px;
+    @include MediaQuery($md) {
+      width: 100%;
+    }
+    .info__step {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      align-items: center;
+      width: 70%;
+      height: 80px;
+      @include MediaQuery($md) {
+        width: 100%;
+      }
+      .btnLogin {
+        .header__user {
+          color: $cGray;
+          font-size: $body1;
+        }
+
+        .imgLogin {
+          // background-image: url("../../../Assets/img/avatar.png");
+          @include BGI(center, cover, 30px, 30px);
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  .seat__checkout {
+    margin-top: 80px;
+    text-align: center;
+    padding-top: 30px;
+    .screen {
+      img {
+        @include MediaQuery($sm) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .list__seat {
+    text-align: center;
+    button {
+      border: none;
+      &:focus {
+        outline: 0;
+      }
+    }
+    .ghe {
+      height: 30px;
+      width: 30px;
+      margin: 5px;
+      background-color: $ghe;
+      border-radius: 5px;
+      color: $primary;
+    }
+    .gheDaDat {
+      background-color: $gheDaDat !important;
+
+      cursor: no-drop;
+    }
+    .gheVip {
+      background-color: $gheVip;
+    }
+    .gheDangDat {
+      background-color: $gheDangDat !important;
+    }
+  }
+  .seat__type {
+    span {
+      margin-top: 10%;
+
+      display: inline-block;
+    }
+    .ghe__dadat {
+      height: 30px;
+      width: 30px;
+      margin: 5px;
+      background-color: $gheDaDat;
+      border-radius: 5px;
+      text-align: center;
+      line-height: 2;
+      display: inline-block;
+      color: $primary;
+    }
+    .ghe__thuong {
+      @extend .ghe__dadat;
+      background-color: $ghe;
+    }
+    .ghe__vip {
+      @extend .ghe__dadat;
+      background-color: $gheVip;
+    }
+    .ghe__dangchon {
+      @extend .ghe__dadat;
+      background-color: $gheDangDat;
+    }
+  }
+  .right__checkout {
+    @include MediaQuery($md) {
+      position: static;
+      width: 100%;
+
+      img {
+        display: none;
+      }
+    }
+    position: fixed;
+
+    top: 0;
+    background-color: $primary;
+    box-shadow: 0 0 15px rgb(0 0 0 / 30%);
+    z-index: 3;
+    width: 32.4%;
+    height: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    .total {
+      border-bottom: 1px dashed $boderBot;
+      height: 80px;
+      margin: 15px 0;
+      text-align: center;
+      font-size: $h2 + 4;
+      color: $gheDangDat !important;
+      .cash {
+        @include MediaQuery($sm) {
+          padding-top: 15px;
+        }
+      }
+    }
+    .checkout__info {
+      border-bottom: 1px dashed $boderBot;
+      padding-bottom: 12.5px;
+      font-size: 16px;
+      p {
+        @include Text($cPrimary, $h4, $semiBold);
+      }
+      span {
+        margin-right: 6px;
+        background-color: #fb4226;
+        color: #ffff;
+        font-size: 16px;
+        border-radius: 4px;
+        padding: 0 5px;
+        display: inline-block;
+        text-align: center;
+      }
+    }
+    .chair {
+      border-bottom: 1px dashed $boderBot;
+      //   padding-bottom: 12.5px;
+      padding-top: 12.5px;
+      margin-bottom: 12.5px;
+      p {
+        color: $cRed;
+        margin-bottom: 10px;
+      }
+      img {
+        border-radius: 5px;
+      }
+    }
+    .buy__ticket {
+      padding-top: 15px;
+      height: 60px;
+      cursor: pointer;
+      font-size: $h5;
+      text-align: center;
+      color: $boderBot !important;
+      border-radius: 5px;
+      background-image: linear-gradient(223deg, #b4ec51 0, #429321 100%);
+    }
+  }
+}

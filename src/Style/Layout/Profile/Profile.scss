@@ -1,0 +1,40 @@
+.profile {
+  @include BGI(center, contain, 100vw, 100vh);
+  .profile__user {
+    padding-top: 100px;
+    .profile__userInfo {
+      a {
+        color: $primary;
+      }
+      .nav-pills .nav-link.active,
+      .nav-pills .show > .nav-link {
+        background-color: $cRed;
+      }
+      border-radius: 5px;
+      background-image: linear-gradient(
+        to bottom,
+        rgba(20, 50, 93, 0.9),
+        rgba(8, 22, 48, 0.9)
+      );
+      box-shadow: 0 0 10px 0 rgb(0 0 0 / 45%);
+      button {
+        padding: 10px;
+        background-color: $cRed;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        color: $primary;
+        margin-top: $mrt - 15;
+        margin-bottom: 20px;
+      }
+      .thead__list {
+        th {
+          color: $cRed;
+        }
+      }
+      tbody {
+        color: $primary;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@import "./Style/Base/reset.scss";
+
+@import "./Style/Hepers/variable.scss";
+@import "./Style/Hepers/mixin.scss";
+@import "./Style/Hepers/extend.scss";
+@import "./Style/lity.scss";
+@import "./Style/Layout/header/header.scss";
+@import "./Style/Layout/Carousel/carousel.scss";
+@import "./Style/Layout/DanhSachPhim/DanhSachPhim.scss";
+@import "./Style/Layout/HeThongRapChieu/heThongRapChieu.scss";
+@import "./Style/Layout/Detail/Detail.scss";
+@import "./Style/Layout/Checkout/checkout.scss";
+@import "./Style/Layout/Login/login.scss";
+@import "./Style/Layout/Register/register.scss";
+@import "./Style/Layout/Profile/Profile.scss";
+@import "./Style/Layout/Admin/Admin.scss";
+
+@import "./Style/Layout/Footer/Footer.scss";

@@ -1,0 +1,70 @@
+.admin {
+  button {
+    outline: none;
+  }
+  .admin__logo {
+    display: block;
+  }
+  .bg__admin {
+    width: 100wh;
+    height: 225vh;
+  }
+  .btn__submit {
+    font-size: 16px;
+    display: inline-block;
+    border-radius: 4px;
+    text-align: center;
+    background: 0 0;
+    padding: 7px 25px;
+    transition: all 0.2s;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    background-color: #00ac4d;
+    border: none;
+    color: #fff;
+  }
+  .admin__info {
+    margin-top: 70px;
+  }
+  .admin__quanLy {
+    .btn__taoLichChieu {
+      background-color: #00ac4d;
+      border-radius: 5px;
+      outline: none;
+      border: none;
+      color: #ffff;
+      padding: 5px;
+    }
+    .btn__edit {
+      background-color: #b03550;
+      border-radius: 5px;
+      outline: none;
+      border: none;
+      color: #ffff;
+      padding: 5px;
+      margin: 0 10px;
+    }
+    .btn__del {
+      background-color: #fb4226;
+      border-radius: 5px;
+      outline: none;
+      border: none;
+      color: #ffff;
+      padding: 5px;
+    }
+  }
+  .quanLy__user {
+    @extend .admin__quanLy;
+  }
+  .modal-dialog {
+    max-width: 1000px !important;
+  }
+  .plist__admin{
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+     background-color: $cRed;
+    }
+    a{
+      color: $primary;
+    }
+  }
+}

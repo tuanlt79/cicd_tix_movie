@@ -1,0 +1,72 @@
+header {
+  //   position: fixed;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 15px rgb(0 0 0 / 30%);
+  z-index: 9;
+  transition: all 0.2s;
+  .navbar {
+    .navbar-brand {
+      background-image: url("../../../Assets/img/web-logo.png");
+      @include BGI(center, cover, 50px, 50px);
+    }
+    .collapse {
+      .btnLogin {
+        margin-right: 100px;
+        cursor: pointer;
+        .dropdown-item.active,
+        .dropdown-item:active {
+          color: $cPrimary;
+          background-color: $primary;
+        }
+        .imgLogin {
+          background-image: url("../../../Assets/img/avatar.png");
+          @include BGI(center, cover, 30px, 30px);
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+        .span__Login {
+          color: $cGray;
+          size: $body1;
+          &:hover {
+            color: $cRed;
+          }
+        }
+        .header__user {
+          color: $cGray;
+          font-size: $body1;
+        }
+        .btn__Logout {
+          // width: 50px;
+          text-align: center;
+          background-color: #959595;
+          border-radius: 4px;
+          color: $primary;
+          padding: 3px;
+          transition: background-color 0.2s ease;
+          border-radius: 4px;
+          outline: none;
+          font-size: $body1;
+        }
+      }
+    }
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color: $cPrimary;
+    margin-right: 20px;
+    font-size: $body1;
+  }
+  .navbar-dark .navbar-nav .nav-link:focus,
+  .navbar-dark .navbar-nav .nav-link:hover {
+    color: $cRed;
+  }
+  .navbar-dark .navbar-toggler-icon {
+    background-image: url("https://tix.vn/app/assets/img/icons/menu-options.png");
+    &:focus {
+      border: none;
+    }
+  }
+}
