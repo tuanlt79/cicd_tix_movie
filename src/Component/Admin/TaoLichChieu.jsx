@@ -18,7 +18,7 @@ export default function TaoLichChieu() {
 
   const onSubmit = (data) => {
     console.log(data);
-    // dispatch(taoLichChieuAction(data, accessToken));
+    dispatch(taoLichChieuAction(data, accessToken));
   };
   return (
     <div className="d-inline-block">
@@ -89,12 +89,12 @@ export default function TaoLichChieu() {
 
                     <div className="form-group">
                       <span className="mr-2">Ngày Chiếu</span>
-                      {/* <input
+                      <input
                         type="text"
                         placeholder="dd/MM/yyyy hh:mm"
                         {...register("ngayChieuGioChieu")}
-                      /> */}
-                      <Controller
+                      />
+                      {/* <Controller
                         name="ngayChieuGioChieu"
                         control={control}
                         defaultValue={null}
@@ -110,7 +110,7 @@ export default function TaoLichChieu() {
                             isClearable
                           />
                         )}
-                      />
+                      /> */}
                     </div>
                   </div>
                 </div>
