@@ -63,12 +63,12 @@ export default function AdminB() {
               className="col-2 bg__admin"
               style={{ backgroundImage: `url(${bg2})` }}
             >
-              <div className="position-fixed plist__admin">
+              <div className=" plist__admin">
                 <NavLink to="/" className="admin__logo text-center">
                   <img src={logo} alt="" width="30%" className="mt-3" />
                 </NavLink>
                 <div
-                  className="nav flex-column nav-pills mt-4"
+                  className="nav flex-column nav-pills mt-4 menu__admin"
                   id="v-pills-tab"
                   role="tablist"
                   aria-orientation="vertical"

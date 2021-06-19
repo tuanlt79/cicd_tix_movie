@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { taoLichChieuAction } from "../../Action/PhimAction";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { VideoCameraAddOutlined } from "@ant-design/icons";
 
 export default function TaoLichChieu() {
   const { accessToken } = useSelector((state) => state.UserReducer);
@@ -21,15 +22,15 @@ export default function TaoLichChieu() {
     dispatch(taoLichChieuAction(data, accessToken));
   };
   return (
-    <div className="d-inline-block">
+    <div className="d-inline-block mr-3">
       {/* Button trigger modal */}
       <button
         type="button"
-        className="btn__taoLichChieu"
+        className="btn__taoLichChieu btn"
         data-toggle="modal"
         data-target="#exampleModalCenter"
       >
-        Tạo Lịch Chiếu
+        <VideoCameraAddOutlined />
       </button>
       {/* Modal */}
       <div

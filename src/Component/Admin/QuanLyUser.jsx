@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteUser, getInfoAllUser } from "../../Action/UserAction";
-import { NavLink } from "react-router-dom";
 import EditUser from "./EditUser";
+import { Switch, Table, Input } from "antd";
+import { DeleteOutlined } from "@ant-design/icons";
+import "antd/dist/antd.css";
 
 export default function QuanLyUser() {
   const dispatch = useDispatch();
@@ -14,57 +16,131 @@ export default function QuanLyUser() {
   useEffect(() => {
     dispatch(getInfoAllUser());
   }, []);
+  // Switch Button User
+  const [dsUser, setDSUser] = useState(null);
+  const handleChangeSwitch = (checked) => {
+    if (checked) {
+      let user1 = thongTinAllUser?.filter((item) => {
+        return item.maLoaiNguoiDung === "KhachHang";
+      });
+      setDSUser(user1);
+    } else {
+      let admin1 = thongTinAllUser?.filter((item) => {
+        return item.maLoaiNguoiDung === "QuanTri";
+      });
+      setDSUser(admin1);
+    }
+  };
+  // -------- Search User
+  const [listUser, setListUser] = useState([]);
+  const [keyWord, setKeyWord] = useState(null);
+  const [temp, setTemp] = useState(-1);
+  useEffect(() => {
+    if (thongTinAllUser?.length > 0) {
+      if (temp > 0) {
+        setListUser(listUser);
+      } else setListUser(thongTinAllUser);
+    }
+  });
+  useEffect(() => {
+    if (keyWord) {
+      if (keyWord.length > 0) {
+        let user = thongTinAllUser?.filter((item) => {
+          return (
+            item.taiKhoan.toLowerCase().indexOf(keyWord.toLowerCase()) >= 0
+          );
+        });
 
-  const danhSachUser = () => {
-    return thongTinAllUser?.map((item, index) => {
-      return (
-        <tr key={index}>
-          <th scope="row">{item.taiKhoan}</th>
-          <td>{item.hoTen}</td>
-          <td>{item.soDt}</td>
-          <td>{item.email}</td>
-          <td>{item.matKhau}</td>
-          <td>{item.maLoaiNguoiDung}</td>
-          <td>
-            {/* <NavLink
-              className="btn__edit"
-              data-toggle="modal"
-              data-target="#exampleModal"
-              to={`/edituser/${item.taiKhoan}`}
-            >
-              Sửa
-            </NavLink> */}
+        setListUser(user);
+
+        setTemp(temp + 1);
+      }
+    }
+  }, [keyWord]);
+
+  const handleChangeSearch = (e) => {
+    setKeyWord(e.target.value);
+  };
+  const columns = [
+    {
+      title: "Tài khoản",
+      dataIndex: "taiKhoan",
+      render: (item) => <div style={{ fontWeight: "bold" }}>{item}</div>,
+    },
+    {
+      title: "Họ tên",
+      dataIndex: "hoTen",
+    },
+    {
+      title: "Email",
+      dataIndex: "email",
+    },
+    {
+      title: "SĐT",
+      dataIndex: "soDt",
+    },
+    {
+      title: "Mật khẩu",
+      dataIndex: "matKhau",
+    },
+    {
+      title: "Mã loại người dùng",
+      dataIndex: "maLoaiNguoiDung",
+    },
+    {
+      title: "",
+      dataIndex: "taiKhoan",
+      render: (taiKhoan) => (
+        <div className="inner-button">
+          <div className="block">
             <EditUser />
+
             <button
-              className="btn__del"
+              className="btn btn__del "
+              type="button"
               onClick={() => {
-                dispatch(deleteUser(item.taiKhoan, accessToken));
+                dispatch(deleteUser(taiKhoan, accessToken));
               }}
             >
-              Xóa
+              <DeleteOutlined />
             </button>
-          </td>
-        </tr>
-      );
-    });
-  };
+          </div>
+        </div>
+      ),
+    },
+  ];
 
   return (
     <Fragment>
-      <table className="table table-striped">
-        <thead className="thead-dark ">
-          <tr>
-            <th scope="col">Tài Khoản</th>
-            <th scope="col">Họ Tên</th>
-            <th scope="col">Số Điện Thoại</th>
-            <th scope="col">Email</th>
-            <th>Mật Khẩu</th>
-            <th scope="col">Loại</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>{danhSachUser()}</tbody>
-      </table>
+      <div className="user-header inner-button">
+        <div className="inner-add row">
+          <div className="col-md-6 col-6">
+            <Input.Group compact>
+              <Input
+                allowClear
+                style={{ width: "60%" }}
+                placeholder="Tìm Tài Khoản ..."
+                onChange={handleChangeSearch}
+              />
+            </Input.Group>
+          </div>
+          <div className="col-md-6 col-6 text-right">
+            <Switch
+              checkedChildren="User"
+              unCheckedChildren="Admin"
+              defaultChecked
+              onChange={handleChangeSwitch}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="manageruser">
+        <Table
+          columns={columns}
+          className="table table-manageruser"
+          dataSource={dsUser ? dsUser : thongTinAllUser}
+        />
+      </div>
     </Fragment>
   );
 }

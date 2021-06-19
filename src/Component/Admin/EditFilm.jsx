@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-
+import { EditOutlined } from "@ant-design/icons";
 import { domain, maNhom } from "../../configs/setting";
 
 export default function EditFilm() {
@@ -41,14 +41,14 @@ export default function EditFilm() {
       });
   };
   return (
-    <div className="d-inline-block">
+    <div className="d-inline-block mr-3">
       <button
         type="button"
-        className="btn__edit"
+        className="btn btn__edit"
         data-toggle="modal"
         data-target="#editFilm"
       >
-        Sửa
+        <EditOutlined />
       </button>
       {/* Modal */}
       <div

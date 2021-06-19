@@ -7,7 +7,7 @@
   }
   .bg__admin {
     width: 100wh;
-    height: 225vh;
+    height: 100vh;
   }
   .btn__submit {
     font-size: 16px;
@@ -28,29 +28,25 @@
   }
   .admin__quanLy {
     .btn__taoLichChieu {
-      background-color: #00ac4d;
-      border-radius: 5px;
+      color: #00ac4d;
       outline: none;
       border: none;
-      color: #ffff;
-      padding: 5px;
+      padding: 0 5px;
+      font-size: $h6;
     }
     .btn__edit {
-      background-color: #b03550;
-      border-radius: 5px;
+      color: #b03550;
       outline: none;
       border: none;
-      color: #ffff;
-      padding: 5px;
-      margin: 0 10px;
+      padding: 0 5px;
+      font-size: $h6;
     }
     .btn__del {
-      background-color: #fb4226;
-      border-radius: 5px;
+      color: #fb4226;
       outline: none;
       border: none;
-      color: #ffff;
-      padding: 5px;
+      padding: 0 5px;
+      font-size: $h6;
     }
   }
   .quanLy__user {
@@ -59,12 +55,35 @@
   .modal-dialog {
     max-width: 1000px !important;
   }
-  .plist__admin{
-    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-     background-color: $cRed;
+  .plist__admin {
+    .nav-pills .nav-link.active,
+    .nav-pills .show > .nav-link {
+      background-color: $cRed;
     }
-    a{
+    a {
       color: $primary;
     }
+  }
+  .ant-pagination-item-active {
+    font-weight: 500;
+    background: #fff;
+    border-color: $cRed;
+  }
+  .ant-pagination-item:focus-visible,
+  .ant-pagination-item:hover {
+    border-color: $cRed;
+  }
+  .ant-switch-checked {
+    background-color: $cRed;
+  }
+  .ant-table-thead > tr > th {
+    color: $primary;
+    font-weight: bold;
+
+    background: rgba(0, 0, 0, 0.85);
+  }
+  .menu__admin {
+    font-size: $subtitle2;
+    font-weight: bold;
   }
 }

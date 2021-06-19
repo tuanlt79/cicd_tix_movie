@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { maNhom } from "../../configs/setting";
 import { editUser } from "../../Action/UserAction";
-
+import { EditOutlined } from "@ant-design/icons";
 export default function EditUser() {
   const { accessToken } = useSelector((state) => state.UserReducer);
 
@@ -11,13 +11,7 @@ export default function EditUser() {
   const thongTinAllUser = useSelector(
     (state) => state.UserReducer.thongTinAllUser
   );
-  // let { id } = props.match.params;
-  // console.log(id);
-  // useEffect(() => {
-  //   dispatch({ type: "closeLoading" });
-  // }, []);
-  // console.log({ thongTinAllUser });
-  // console.log(thongTinAllUser?.map((item, index) => item.taiKhoan));
+
   const {
     register,
     handleSubmit,
@@ -29,14 +23,14 @@ export default function EditUser() {
     dispatch(editUser(data, accessToken));
   };
   return (
-    <div className="d-inline-block">
+    <div className="d-inline-block mr-3">
       <button
         type="button"
-        className="btn__edit"
+        className="btn btn__edit"
         data-toggle="modal"
         data-target="#exampleModal"
       >
-        Sửa
+        <EditOutlined />
       </button>
       {/* Modal */}
       <div

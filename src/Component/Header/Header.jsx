@@ -63,6 +63,9 @@ export default function Header() {
                   <NavLink className="dropdown-item" to="/profile">
                     Thông Tin Tài Khoản
                   </NavLink>
+                  <NavLink className="dropdown-item" to="/admin">
+                    Quản Trị Viên
+                  </NavLink>
 
                   <div className="dropdown-divider" />
                   <a className="dropdown-item" href="#">
