@@ -105,7 +105,6 @@ export const layThongTinPhongVeAction = (maLichChieu) => {
   };
 };
 
-
 export const deleteFilm = (maPhim, token) => {
   return async (dispatch) => {
     try {
@@ -159,3 +158,42 @@ export const taoLichChieuAction = (value, token) => {
 //     }
 //   }
 // };
+
+export const getAllDetail = () => {
+  return async (dispatch) => {
+    dispatch({ type: "openLoading" });
+    setTimeout(async () => {
+      try {
+        let result = await axios({
+          url: `https://60ae0d5e80a61f00173324bc.mockapi.io/products`,
+          method: "GET",
+        });
+        dispatch({
+          type: "GET_ALL",
+          arrSP: result.data,
+        });
+      } catch (errors) {
+        console.log(errors);
+      }
+      dispatch({
+        type: "closeLoading",
+      });
+    }, 700);
+  };
+};
+export const colorProduct = () => {
+  return async (dispatch) => {
+    try {
+      let result = await axios({
+        url: `https://60ae0d5e80a61f00173324bc.mockapi.io/colors`,
+        method: "GET",
+      });
+      dispatch({
+        type: "COLOR_SP",
+        colorSP: result.data,
+      });
+    } catch (errors) {
+      console.log(errors);
+    }
+  };
+};

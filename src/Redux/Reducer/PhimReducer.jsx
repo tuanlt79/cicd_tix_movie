@@ -4,6 +4,8 @@ const stateDefault = {
   cumRap: [],
   chiTietPhim: {},
   thongTinPhongVe: {},
+  arrSP: [],
+  colorSP: [],
 };
 export const PhimReducer = (state = stateDefault, action) => {
   switch (action.type) {
@@ -25,6 +27,14 @@ export const PhimReducer = (state = stateDefault, action) => {
     }
     case "LAY_THONG_TIN_PHONG_VE": {
       state.thongTinPhongVe = action.thongTinPhongVe;
+      return { ...state };
+    }
+    case "GET_ALL": {
+      state.arrSP = [...action.arrSP];
+      return { ...state };
+    }
+    case "COLOR_SP": {
+      state.colorSP = [...action.colorSP];
       return { ...state };
     }
     default: {

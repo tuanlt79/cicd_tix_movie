@@ -13,6 +13,7 @@ import { Provider } from "react-redux";
 import AdminB from "./Component/Admin/AdminB";
 import { store } from "./Redux/configStore";
 import { useLayoutEffect } from "react";
+import TestFE from "./Component/Project/TestFE";
 export const history = createBrowserHistory();
 const ScrollToTop = withRouter(({ children, location: { pathname } }) => {
   useLayoutEffect(() => {
@@ -36,6 +37,7 @@ function App() {
               <HeaderTemplate exact path="/profile" Component={Profile} />
               <Route exact path="/admin" component={AdminB} />
               <Route exact path="/" component={Home} />
+              <Route exact path="/testfe" component={TestFE} />
             </Switch>
           </ScrollToTop>
         </div>

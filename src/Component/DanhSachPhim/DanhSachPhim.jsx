@@ -9,7 +9,6 @@ import { NavLink } from "react-router-dom";
 export default function DanhSachPhim() {
   const dispatch = useDispatch();
   const mangPhim = useSelector((state) => state.PhimReducer.mangPhim);
-  // console.log(mangPhim);
 
   useEffect(() => {
     dispatch(layDanhSachPhimAction());
